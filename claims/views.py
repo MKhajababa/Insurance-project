@@ -298,7 +298,7 @@ def UpdateLead(request,pk):
         occupation = request.POST['occ']
         auser = request.POST['agent']
         user = User.objects.filter(username = auser).first()
-        luser = User.objects.filter(username = loginuser.username).first()
+        luser = User.objects.filter(username = user.username).first()
         agent = AgentUser.objects.filter(user = user).first()
         image = request.FILES['upload']
         describtion = request.POST['desc']
